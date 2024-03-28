@@ -70,23 +70,41 @@
                     </div>
 
                     
-                    <div class="mb-3">
-                        <label class="form-label">Nama Anda</label>
-                        <input type="text" class="form-control" id="namaPelaporan"  required="" placeholder="Masukan Nama Anda">
-                    </div>
                     
-
+                    
                     <div class="mb-3">
                         <label class="form-label">Lokasi</label>
                         <input type="text" class="form-control" id="dimana" readonly hidden>
                         <iframe id="mapframe" class="form-control"></iframe>
                     </div>
-
+                    
                     <div class="mb-3">
                         <label for="bagaimana" class="form-label">Keterangan</label>
-                        <textarea class="form-control" id="bagaimana" required placeholder="Keterangan Kejadian" style="width: 100%; height:200px;" contenteditable="true" ></textarea>
+                        <textarea class="form-control" id="bagaimanaAwal" required placeholder="Keterangan Kejadian" style="width: 100%; height:200px;" contenteditable="true"></textarea>
+                        <script>
+                            // Fungsi untuk mengganti "enter" dengan "%0A"
+                            function replaceEnterWithPercentZeroA() {
+                                const textarea = document.getElementById("bagaimanaAwal");
+                                const newValue = textarea.value.replace(/\n/g, "%0A");
+                                // menambahkan nilai ke textarea yanga asli bukan tampilan user
+                                document.getElementById('bagaimana').value = newValue;
+                            }
+                            
+                            // Panggil fungsi di bawah ini ketika pengguna selesai mengetik    
+                            document.getElementById("bagaimanaAwal").addEventListener("blur", replaceEnterWithPercentZeroA);
+                            </script>
                     </div>
 
+                    <div class="mb-3">
+                        <!-- teks asli yang akan di kirim ke function api whatsapp ditampung disini -->
+                        <textarea class="form-control" id="bagaimana" hidden ></textarea>
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Nama Anda</label>
+                        <input type="text" class="form-control" id="namaPelaporan"  required="" placeholder="Masukan Nama Anda">
+                    </div>
                     <a class="btn btn-primary btn-lg btn-block w-100 send_form" id="send_form" href="javascript:void(0);" type="submit" title="Kirim ke WhatsApp">
                         <i class="fa fa-paper-plane"></i> Kirim
                     </a>
