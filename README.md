@@ -8,5 +8,5 @@ untuk koordinat google maps user dapat menyesuaikan dengan merrefresh halaman ag
 untuk field urain kejadian atau keterangan sudah dimodifikasi untuk dapat memasukan karakter "enter" agar sesuai dengan format pesan whatsapp. 
 semua informasi yang di tampung akan diteruskan ke pesan whatsapp. 
 
-untuk mencoba aplikasi silakan kunjungi s.id/911indo
+untuk mencoba aplikasi silakan kunjungi [s.id/911indo](https://s.id/911indo)
 atau dapat instal apknya di Repositories https://github.com/rmjpkl/astekpam
